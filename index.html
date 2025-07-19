@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Colorful Network Learning Dashboard</title>
+  <style>
+    body {
+      background-color: #0F172A;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      color: white;
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0 10px;
+    }
+
+    .header {
+      text-align: center;
+      font-size: 32px;
+      font-weight: bold;
+      padding: 20px;
+      border-radius: 10px;
+      margin-bottom: 30px;
+      box-shadow: 0 4px 10px rgba(255, 255, 255, 0.2);
+    }
+
+    h3 {
+      margin: 40px 0 20px;
+      font-size: 22px;
+      color: #f1f5f9;
+      border-bottom: 2px solid #334155;
+      width: 100%;
+      max-width: 1000px;
+      padding-bottom: 8px;
+    }
+
+    .button-container {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      justify-content: center;
+      max-width: 1200px;
+    }
+
+    .button {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      width: 180px;
+      height: 100px;
+      border-radius: 10px;
+      font-size: 16px;
+      color: white;
+      text-decoration: none;
+      border: 2px solid;
+      cursor: pointer;
+      transition: all 0.3s ease-in-out;
+      box-shadow: 0 4px 10px rgba(255, 255, 255, 0.1);
+      overflow: hidden;
+      text-align: center;
+      padding: 10px;
+    }
+
+    .button .arrow {
+      width: 30px;
+      height: 30px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 18px;
+      margin-top: 5px;
+      transition: background-color 0.3s, color 0.3s;
+      background: white;
+      color: black;
+    }
+
+    .button:hover {
+      color: white;
+      transform: scale(1.05);
+    }
+
+    /.button-1 { border-color: #e6194B; }
+    .button-1 .arrow { background: #e6194B; color: white; }
+    .button-1:hover { background: #e6194B; }
+    .button-1:hover .arrow { background: white; color: #e6194B; }
+
+    .button-2 { border-color: #3cb44b; }
+    .button-2 .arrow { background: #3cb44b; color: white; }
+    .button-2:hover { background: #3cb44b; }
+    .button-2:hover .arrow { background: white; color: #3cb44b; }
+
+    .button-3 { border-color: #ffe119; }
+    .button-3 .arrow { background: #ffe119; color: black; }
+    .button-3:hover { background: #ffe119; }
+    .button-3:hover .arrow { background: black; color: #ffe119; }
+
+    .button-4 { border-color: #4363d8; }
+    .button-4 .arrow { background: #4363d8; color: white; }
+    .button-4:hover { background: #4363d8; }
+    .button-4:hover .arrow { background: white; color: #4363d8; }
+
+    .button-5 { border-color: #f58231; }
+    .button-5 .arrow { background: #f58231; color: white; }
+    .button-5:hover { background: #f58231; }
+    .button-5:hover .arrow { background: white; color: #f58231; }
+
+    .button-6 { border-color: #911eb4; }
+    .button-6 .arrow { background: #911eb4; color: white; }
+    .button-6:hover { background: #911eb4; }
+    .button-6:hover .arrow { background: white; color: #911eb4; }
+
+    .button-7 { border-color: #46f0f0; }
+    .button-7 .arrow { background: #46f0f0; color: black; }
+    .button-7:hover { background: #46f0f0; }
+    .button-7:hover .arrow { background: black; color: #46f0f0; }
+
+    .button-8 { border-color: #f032e6; }
+    .button-8 .arrow { background: #f032e6; color: white; }
+    .button-8:hover { background: #f032e6; }
+    .button-8:hover .arrow { background: white; color: #f032e6; }
+
+    .button-9 { border-color: #bcf60c; }
+    .button-9 .arrow { background: #bcf60c; color: black; }
+    .button-9:hover { background: #bcf60c; }
+    .button-9:hover .arrow { background: black; color: #bcf60c; }
+
+    .button-10 { border-color: #fabebe; }
+    .button-10 .arrow { background: #fabebe; color: black; }
+    .button-10:hover { background: #fabebe; }
+    .button-10:hover .arrow { background: black; color: #fabebe; }
+
+    .button-11 { border-color: #008080; }
+    .button-11 .arrow { background: #008080; color: white; }
+    .button-11:hover { background: #008080; }
+    .button-11:hover .arrow { background: white; color: #008080; }
+
+    .button-12 { border-color: #e6beff; }
+    .button-12 .arrow { background: #e6beff; color: black; }
+    .button-12:hover { background: #e6beff; }
+    .button-12:hover .arrow { background: black; color: #e6beff; }
+
+    .button-13 { border-color: #9A6324; }
+    .button-13 .arrow { background: #9A6324; color: white; }
+    .button-13:hover { background: #9A6324; }
+    .button-13:hover .arrow { background: white; color: #9A6324; }
+
+    .button-14 { border-color: #fffac8; }
+    .button-14 .arrow { background: #fffac8; color: black; }
+    .button-14:hover { background: #fffac8; }
+    .button-14:hover .arrow { background: black; color: #fffac8; }
+
+    .button-15 { border-color: #800000; }
+    .button-15 .arrow { background: #800000; color: white; }
+    .button-15:hover { background: #800000; }
+    .button-15:hover .arrow { background: white; color: #800000; }
+
+    .button-16 { border-color: #aaffc3; }
+    .button-16 .arrow { background: #aaffc3; color: black; }
+    .button-16:hover { background: #aaffc3; }
+    .button-16:hover .arrow { background: black; color: #aaffc3; }
+
+    .button-17 { border-color: #ffd8b1; }
+    .button-17 .arrow { background: #ffd8b1; color: black; }
+    .button-17:hover { background: #ffd8b1; }
+    .button-17:hover .arrow { background: black; color: #ffd8b1; }
+
+    .button-18 { border-color: #000075; }
+    .button-18 .arrow { background: #000075; color: white; }
+    .button-18:hover { background: #000075; }
+    .button-18:hover .arrow { background: white; color: #000075; }
+
+    .button-19 { border-color: #808000; }
+    .button-19 .arrow { background: #808000; color: white; }
+    .button-19:hover { background: #808000; }
+    .button-19:hover .arrow { background: white; color: #808000; }
+
+    .button-20 { border-color: #a9a9a9; }
+    .button-20 .arrow { background: #a9a9a9; color: black; }
+    .button-20:hover { background: #a9a9a9; }
+    .button-20:hover .arrow { background: black; color: #a9a9a9; }
+
+    /* Dropdown styles */
+    .button-with-dropdown {
+      position: relative;
+    }
+
+    .dropdown-content {
+      display: none;
+      position: absolute;
+      top: 110%;
+      left: 0;
+      background-color: #1e293b;
+      border: 1px solid #334155;
+      border-radius: 8px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+      z-index: 1000;
+      min-width: 180px;
+      text-align: left;
+    }
+
+    .dropdown-content a {
+      display: block;
+      padding: 10px 15px;
+      color: white;
+      text-decoration: none;
+      font-size: 14px;
+      border-bottom: 1px solid #334155;
+    }
+
+    .dropdown-content a:last-child {
+      border-bottom: none;
+    }
+
+    .dropdown-content a:hover {
+      background-color: #334155;
+    }
+  </style>
+</head>
+<body>
+  <div class="header">
+    <div>Welcome to.. !</div>
+    <div>Learn Networks.. !</div>
+  </div>
+
+  <div class="button-container">
+
+    <!-- 🌐 Network Technologies -->
+    <h3>🌐 Network Protocol / Technologies</h3>
+	
+	<a href="https://docs.google.com/document/d/1ui3FYbs4FirJtf0dyuIeLNgFnvkYNYYubO1CePatwBY/edit?tab=t.0" class="button button-1" target="_blank"><span>SD-WAN</span><div class="arrow">➡</div></a>
+    <a href="https://docs.google.com/document/d/1IQ4bOpbv7e7UrvAu_qgqLGi1zUW-dw3Q7ZLwZ9DydGI/edit?tab=t.0" class="button button-2" target="_blank"><span>Zscaler</span><div class="arrow">➡</div></a>
+	<a href="https://docs.google.com/document/d/1Dab6AFiAPmpBuURx9hp0Z84JFNkYRDDCzovi2XpAH4A/edit?tab=t.szed2qjm3b5m#heading=h.u4qvpymq4o3j" class="button button-3" target="_blank"><span>OSPF</span><div class="arrow">➡</div></a>
+    <a href="https://docs.google.com/document/d/1Dab6AFiAPmpBuURx9hp0Z84JFNkYRDDCzovi2XpAH4A/edit?tab=t.0#heading=h.hdwuxg5sl1dj" class="button button-4" target="_blank"><span>BGP</span><div class="arrow">➡</div></a>
+	<a href="#" class="button button-9" target="_blank"><span>Switching</span><div class="arrow">➡</div></a>
+ 
+    <a href="https://docs.google.com/document/d/1Dab6AFiAPmpBuURx9hp0Z84JFNkYRDDCzovi2XpAH4A/edit?tab=t.7owxuheez75f#heading=h.bonjhp77x429" class="button button-5" target="_blank"><span>Wireless</span><div class="arrow">➡</div></a>
+    <div class="button-with-dropdown">
+      <div class="button button-1" onclick="toggleDropdown('iseDropdown')"><span>ISE</span><div class="arrow">➡</div></div>
+      <div id="iseDropdown" class="dropdown-content">
+        <a href="https://www.udemy.com/home/my-courses/learning/" target="_blank">Udemy</a>
+        <a href="https://docs.google.com/document/d/1t5eJ-D9lqfmlJx0aTGXG0atmLXXRaksXYemV1yoQAkg/edit?tab=t.0" target="_blank">My Notes</a>
+      </div>
+    </div>
+    <a href="https://docs.google.com/document/d/1Dab6AFiAPmpBuURx9hp0Z84JFNkYRDDCzovi2XpAH4A/edit?tab=t.brqwfpgi5r6e#heading=h.dwecjxvpmnqg" class="button button-7" target="_blank"><span>F5</span><div class="arrow">➡</div></a>
+    <a href="https://blog.techclick.in/ipsec-configuration-and-explanation/#page-PBMbTxqVn4lmtTGR" class="button button-10" target="_blank"><span>VPN</span><div class="arrow">➡</div></a>
+      	
+    <a href="https://www.notion.so/FortiGate-9591c7a84be249b8b58a361533986cfa" class="button button-11" target="_blank"><span>Fortigate</span><div class="arrow">➡</div></a>
+	
+    
+    <h3>☁️ Cloud</h3>
+	
+    <!-- Cloud Buttons -->
+    <a href="#" class="button button-8" target="_blank"><span>Azure</span><div class="arrow">➡</div></a>
+    <a href="https://surajpjoshi.github.io/gcp-sop/" class="button button-1" target="_blank"><span>GCP-SOP</span><div class="arrow">➡</div></a>   
+	
+	
+
+    
+    <h3>🖥️ EVENG & Labs</h3>
+    <!-- Eveng Buttons -->
+	
+    <a href="https://console.cloud.google.com/compute/instances?cloudshell=true&inv=1&invt=Ab3J7Q&project=decisive-lambda-460417-g3&authuser=1" class="button button-12" target="_blank"><span>GCP_EVENG_VM</span><div class="arrow">➡</div></a>
+    <a href="http://104.154.216.220/" class="button button-13" target="_blank"><span>EVENG-LAB</span><div class="arrow">➡</div></a>
+	<a href="https://surajpjoshi.github.io/EVENG-SOP/" class="button button-3" target="_blank"><span>EVENG-SOP</span><div class="arrow">➡</div></a>
+	
+
+    <div class="button-with-dropdown">
+      <div class="button button-15" onclick="toggleDropdown('eveDropdown')"><span>EVENG IMAGES</span><div class="arrow">➡</div></div>
+      <div id="eveDropdown" class="dropdown-content">
+        <a href="https://drive.labhub.eu.org/0:/" target="_blank">Labhub</a>
+        <a href="https://github.com/hegdepavankumar/Cisco-Images-for-GNS3-and-EVE-NG/tree/main?tab=readme-ov-file" target="_blank">On Github</a>
+      </div>
+    </div>
+
+       
+    <h3>📝 Personal Projects</h3>
+    <!-- Personal Projects Buttons -->
+    <a href="https://github.com/surajpjoshi/Net-Works/edit/master/index.html" class="button button-16" target="_blank"><span>HTML Code</span><div class="arrow">➡</div></a>
+	<a href="https://docs.google.com/document/d/1Dab6AFiAPmpBuURx9hp0Z84JFNkYRDDCzovi2XpAH4A/edit?tab=t.7b9p7r8hdfat" class="button button-6" target="_blank"><span>Self</span><div class="arrow">➡</div></a>
+    <a href="https://docs.google.com/document/d/1Dab6AFiAPmpBuURx9hp0Z84JFNkYRDDCzovi2XpAH4A/edit?tab=t.f4m1f3m8hvgt#heading=h.mpg9pzjzpjfq" class="button button-9" target="_blank"><span>CheetSheet</span><div class="arrow">➡</div></a>
+    <a href="https://docs.google.com/document/d/1Dab6AFiAPmpBuURx9hp0Z84JFNkYRDDCzovi2XpAH4A/edit?tab=t.kub939qwfheh#heading=h.7o1mh0r2rbr0" class="button button-14" target="_blank"><span>Interview Questions</span><div class="arrow">➡</div></a>
+
+  <a href="https://surajpjoshi.github.io/Site-Network-Profile/" class="button button-9" target="_blank"><span>Site-Network-Profile</span><div class="arrow">➡</div></a>
+	
+
+  </div>
+
+<script>
+function toggleDropdown(id) {
+  const dropdown = document.getElementById(id);
+  const isVisible = dropdown.style.display === 'block';
+  document.querySelectorAll('.dropdown-content').forEach(el => el.style.display = 'none');
+  dropdown.style.display = isVisible ? 'none' : 'block';
+}
+
+document.addEventListener('click', function(event) {
+  const isDropdown = event.target.closest('.button-with-dropdown');
+  if (!isDropdown) {
+    document.querySelectorAll('.dropdown-content').forEach(el => el.style.display = 'none');
+  }
+});
+</script>
+</body>
+</html>
