@@ -267,7 +267,7 @@
 	
     <a href="https://console.cloud.google.com/compute/instances?cloudshell=true&inv=1&invt=Ab3J7Q&project=decisive-lambda-460417-g3&authuser=1" class="button button-12" target="_blank"><span>GCP_EVENG_VM</span><div class="arrow">➡</div></a>
     <a href="http://104.154.216.220/" class="button button-13" target="_blank"><span>EVENG-LAB</span><div class="arrow">➡</div></a>
-	<a href="https://surajpjoshi.github.io/EVENG-SOP/" class="button button-3" target="_blank"><span>EVENG-SOP</span><div class="arrow">➡</div></a>
+    <a href="https://surajpjoshi.github.io/EVENG-SOP/" class="button button-3" target="_blank"><span>EVENG-SOP</span><div class="arrow">➡</div></a>
 	
 
     <div class="button-with-dropdown">
@@ -277,6 +277,10 @@
         <a href="https://github.com/hegdepavankumar/Cisco-Images-for-GNS3-and-EVE-NG/tree/main?tab=readme-ov-file" target="_blank">On Github</a>
       </div>
     </div>
+
+<!-- start Eveng  -->
+
+	  <a href="#" onclick="runPythonScript()" class="button button-12"><span>▶ Start Local EVENG VM</span><div class="arrow">➡</div></a>
 
        
     <h3>📝 Personal Projects</h3>
@@ -292,6 +296,20 @@
   </div>
 
 <script>
+
+  function runPythonScript() {
+    fetch("http://127.0.0.1:5000/run-script")
+      .then(response => response.text())
+      .then(data => {
+        alert("✅ Script executed:\n\n" + data);
+      })
+      .catch(error => {
+        alert("❌ Failed to run script:\n" + error);
+      });
+  }
+
+
+
 function toggleDropdown(id) {
   const dropdown = document.getElementById(id);
   const isVisible = dropdown.style.display === 'block';
